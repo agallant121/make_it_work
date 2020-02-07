@@ -45,4 +45,13 @@ RSpec.describe "As a visitor" do
       expect(page).to have_content("Average Years of Experience: 9")
     end
   end
+
+  it "shows the average years of experience for a project" do
+
+    visit "/projects/#{@project_4.id}"
+
+    within("#project-#{@project_4.id}") do
+      expect(page).to have_content("Average Years of Experience: 9")
+    end
+  end
 end
